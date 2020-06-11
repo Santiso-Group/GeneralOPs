@@ -1,0 +1,20 @@
+! Molecule map data
+3                 ! Number of entries
+! Benzene
+BENZ              ! Residue name
+PLANAR_SYMMETRIC  ! Residue type
+0 1 2             ! Atoms defining the internal frame
+0                 ! Number of internal degrees of freedom
+! Glycine
+GLY               ! Residue name
+GENERAL           ! Residue type
+4 0 7             ! Atoms defining the internal frame
+1                 ! Number of internal degrees of freedom
+DIHEDRAL          ! Type of DOF (DISTANCE, ANGLE, DIHEDRAL)
+0 4 7 9           ! Atoms defining the internal DOF
+2                 ! Symmetry number
+! Water
+WAT               ! Residue name
+GENERAL           ! Residue type
+0 1 2             ! Atoms defining the internal frame
+0                 ! Number of internal degrees of freedom 

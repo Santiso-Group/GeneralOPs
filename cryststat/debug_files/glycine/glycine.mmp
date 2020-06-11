@@ -1,0 +1,10 @@
+! Molecule map data
+1                 ! Number of entries
+! Glycine
+GLY               ! Residue name
+GENERAL           ! Residue type
+4 0 7             ! Atoms defining the internal frame
+1                 ! Number of internal degrees of freedom
+DIHEDRAL          ! Type of DOF (DISTANCE, ANGLE, DIHEDRAL)
+0 4 7 9           ! Atoms defining the internal DOF
+2                 ! Symmetry number

@@ -1,0 +1,74 @@
+
+BEFORE DOING ANYTHING - make a working copy of everything. Then organize and
+apply git, then separate into master and development branches. Keep binaries
+from the master branch in a safe location (/usr/local/?).
+
+switch with brackets: put break inside? In any case check that all are same
+
+-> Besides a parser, it would be good to have some form of exception throwing
+rather than typing all the error messages by hand
+
+-> Would be good to choose a unit convention, e.g. for pair potentials. Right
+now it's just been done with the units given.
+-> Not all potentials in PairPotential have been debugged - would be good
+to compare each one with, e.g. DL_POLY - INCLUDING THE TAIL CORRECTIONS!
+THIS REQUIRES HEAVY DEBUGGING!
+-> For pair potentials, eventually change data members to private...
+
+Some changes that would be useful:
+
+-> Consider using clang++? 
+-> need to fix hiding issue?, check dcdfile.h
+
+-> Organize this by file type in case of file formats!
+- In DiscreteField, makes more sense to replace addValue with add
+
+- Encapsulate enums and typedefs within classes
+
+FIELDS:
+
+A single container class for a grid and any number of point/cell data sets would be better and simpler
+This would also be more consistent with the VTK format
+The work DiscreteField is doing should be for an interpolator/accumulator class
+-> Change this when moving to mymath, will probably need to rename discretefield and rewrite/change VTKFile
+* NEED SIMPLER CONTAINER *
+
+GRIDS:
+
+Other possible methods: 
+- Delta (spacing between cells)
+- Allow for cell, point, and faces (this applies to fields too)
+
+
+- Pair potential - maybe implement the calculation of potential energy + forces
+rather than just storing -> DONE, but need to debug the functions
+the parameters. 
+- Unify atom data for DL_POLY, CHARMM-style and Sybyl files - e.g. assign Residue names from FIELD files etc.
+Right now it is a bit confusing.
+- For pdb files, would need to also reach/write chain ids to handle large systems correctly
+- Check if it would make sense to bring this in line with C++11 (e.g. replace C-style arrays with std::array etc.)
+- Move Grid, Lattice, DiscreteField, and VTKFile to mymath - this will need relinking a lot of stuff though
+-> Do this when moving to GIT
+- Also, it makes sense in the future to implement separately PointField and CellField classes as simple containers,
+  DiscreteField does a lot of averaging that should be higher-level
+- May make sense to create a utilities file and put utility code there?
+- XYZFile (and presumably others) use the version of getline that reads to char[], change that to std::getline.
+- In CONFIGFile, FIELDFile, the keywords can potentially be uppercase as well - need to implement that.
+- Better way to handle error messages across classes (exceptions probably)
+- For file formats that support unit cell info, test the cases where numDimensions < 3
+- In PDBFile, CONFIGFile (possibly elsewhere), std::setiosflags is called once for every atom record. This shouldn't be necessary - make it only once and test.
+- Implement other types of PBCs (see DL_POLY manual). Then would need a key for PBCs
+  in lattice class, which can match the key in DL_POLY files, etc.
+- In pdbfile, when reading a non-new geometry, verify that there aren't extra atoms in the file
+- In xyz file and config file (others?), if connectivity is not defined beforehand, could define it by using bonding. Add this as an option.
+- Along the lines of the above, for a future version, it would be good to have a way to define a topology beyond just bonds. Probably the best, in keeping with the minimalist design of Geometry objects, would be to have a topology class containing angles, dihedrals, etc. that could somehow be added to/generated from a Geometry/Molecule object, or maybe a System object. Something like this can potentially be done for force field parameters as well. Note that this can only be done efficiently by avoiding consistency checks...
+- Add a "build" or "obj" directory to store object files (better with Git)
+- Update Makefile (actually all Makefiles) with include file dependencies.
+- Update (better, automate the updating of) Copyright info.
+- Allow the possibility of reading xyz files to System<*> objects -> ESPECIALLY IF TOPOLOGY HAS ALREADY BEEN DEFINED! (As in CONFIG)
+- xyz file needs cleaning up, for example it copies atoms instead of defining const references, etc.
+- Allow the possibility of predefining the connectivity when reading xyz files.
+- Maybe add the ability to turn off automatic bond updating when reading coordinate-only files.
+- Add the ability to read multiple-letter symbols in PSFFile and PDBFile.
+- Add a topology object that can read/write bonds, angles, etc. This would be useful to interface with, e.g. psf and FIELD files.
+

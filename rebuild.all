@@ -1,0 +1,21 @@
+#!/bin/bash
+# Make all projects (in the right order)
+basedir=/Users/erik/Projects/to_send
+cd $basedir/mymol
+make clean; make
+cd $basedir/crystdist
+make clean; make
+cd $basedir/cop2pdb
+make clean; make
+cd $basedir/copcalc
+make clean; make
+cd $basedir/cryststat
+make clean; make
+cd $basedir/getpeaks
+make clean; make
+cd $basedir/pkt2pdb
+make clean; make
+cd $basedir/randomc
+make clean; make
+cd $basedir/peakdist
+make clean; make

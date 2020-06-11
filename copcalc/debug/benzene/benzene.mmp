@@ -1,0 +1,8 @@
+! Molecule map data
+1                 ! Number of entries
+! Benzene
+BENZ              ! Residue name
+PLANAR_SYMMETRIC  ! Residue type
+0 1 2             ! Atoms defining the internal frame
+0                 ! Number of internal degrees of freedom
+

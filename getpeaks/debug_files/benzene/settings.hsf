@@ -1,0 +1,12 @@
+100 ! Number of distance bins
+181 ! Number of angle bins
+21 ! Number of vector bins
+11 ! Number of quaternion bins
+100 ! Number of bins for distance DOFs
+181 ! Number of bins for angle DOFs
+361 ! Number of bins for dihedral DOFs
+7.4 ! Distance cutoff
+10 ! Internal cutoff
+0.1 ! Norm cutoff to merge histogram entries
+2 ! Frequency cutoff to trim histogram
+20 ! Frequency cutoff to trim peak group table

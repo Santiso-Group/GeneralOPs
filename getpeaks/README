@@ -1,0 +1,16 @@
+Some notes on getpeaks:
+
+- When dealing with a new structure, it is a good idea to try different values
+  for the histogram settings, especially the distance cutoff. If there are
+  additional molecules just beyond the cutoff, this may cause problems later
+  when doing finite-temperature averaging using cryststat (the molecules
+  may move within the cutoff and contribute to the statistics of the wrong peak).
+
+- The norm cutoff used to trim the histogram should be larger for a less
+  ordered system, but it is a good idea to try smaller values to make sure
+  that physically distinct peaks are not getting merged into a single peak.
+
+- There is only a limited treatment of point-group molecular symmetry in this
+  version of the library, for symmetries other than the ones implemented the
+  statistics will still be correct, but there will be a multiplicity of
+  symmetry-equivalent peaks. 

@@ -1,0 +1,10 @@
+TODO for mymath:
+0. Bring in line with C++11? e.g. Replace static C-style arrays with std::array, use special functions from STL etc.
+1. Many of the classes are complex enough that it makes sense to make this a static library rather than a collection of headers. Change that and modify documentation accordingly.
+2. (Check individual headers and add stuff here)
+3. Implement isSymmetric() method for matrix classes, and a bit more linear algebra routines (check JAMA/EISPACK)
+4. Need to generalize to non-square matrices too.
+5. Move Lattice and Grid here.
+6. Also move and clean up the Field classes
+7. Even before the Field classes, implement a more general accumulator class. This would have made crystdist, field, etc. easier to implement. 
+7. Implement clustering (K-Means++) in terms of the accumulator class using templates.

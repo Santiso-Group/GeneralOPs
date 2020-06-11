@@ -1,0 +1,10 @@
+mymath - A simple C++ math library 
+
+mymath provides a set of headers containing common math functions. 
+
+The makefile provided can be used to debug the various classes. The file containing the debug source coude is src/mymath.cpp. To make, use 'make debug'.
+
+For details, check the header files in the 'mymath/include' directory.
+
+If you get errors involving the "gamma" function in 'include/specialfunctions.h', it probably means that your <cmath> library does not include the gamma function. If so, uncomment the definition of gamma in 'include/specialfunctions.h'.
+

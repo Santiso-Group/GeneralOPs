@@ -1,0 +1,12 @@
+mymol - A simple C++ molecular modeling library
+
+mymol provides a set of classes to store and manipulate the types of objects
+commonly found in molecular modeling - atoms, bonds, geometries (collections
+of atoms and bonds), molecules, and various molecular file formats.
+
+To build the library, simply run 'make' from the 'mymol' directory.
+
+For details, check the header files in the 'mymol/include' directory.
+
+To debug the library, modify the file 'src/mymol.cpp', and then use
+'make debug'. The debug executable will be created in the 'bin' directory.

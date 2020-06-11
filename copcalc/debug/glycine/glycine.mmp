@@ -1,0 +1,7 @@
+! Molecule map data
+1                 ! Number of entries
+! Glycine
+GLY               ! Residue name
+GENERAL           ! Residue type
+4 0 7             ! Atoms defining the internal frame
+0                 ! Number of internal degrees of freedom

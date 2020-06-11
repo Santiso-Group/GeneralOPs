@@ -1,0 +1,11 @@
+The files in this directory are taken from the randomc package by Agner Fog. 
+All I did was add a Makefile. The package is (c) Agner Fog - 
+see src/rancombi.cpp for more details.
+Note that randomc is covered by a GNU GPL, so if you intend to use this in
+a commercial package you will need to implement your own version of the
+random number generators in order to link to the crystdist library
+(or you can use the RNGs that come with the C++11 standard library)
+The original distribution of randomc can be found at http://www.agner.org/random/
+and in the file randomc.zip in this directory.
+
+- Erik Santiso
