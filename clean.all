@@ -1,6 +1,6 @@
 #!/bin/bash
 # Make all projects (in the right order)
-basedir=/Users/erik/Projects/to_send
+basedir=
 cd $basedir/mymol
 make clean
 cd $basedir/crystdist
