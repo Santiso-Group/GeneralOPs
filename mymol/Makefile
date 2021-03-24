@@ -10,7 +10,8 @@ DATA_INCLUDE_FILE = "$(MYMOL_PATH)/include/datafiles.h"
 # Compile in 32-bit if having trouble reading dcd files
 #CC = g++ -m32 -fast
 #CC = g++ -fast
-CC = clang++ -m32
+#CC = clang++ -m32
+CC = g++ -m32
 #CC = clang++ -O4 -std=c++11 -stdlib=libc++
 CFLAGS = -c -Wall -I$(COMMON_ROOT_PATH) -I$(MYMATH_ROOT_PATH) -I$(MYMOL_ROOT_PATH)
 
